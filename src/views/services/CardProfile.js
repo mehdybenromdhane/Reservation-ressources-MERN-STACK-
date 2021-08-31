@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
 import Label from "@material-tailwind/react/Label";
 import { Link } from "react-router-dom";
+import Modal from "@material-tailwind/react/Modal";
+import ModalHeader from "@material-tailwind/react/ModalHeader";
+import ModalBody from "@material-tailwind/react/ModalBody";
+import ModalFooter from "@material-tailwind/react/ModalFooter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Checkbox from "@material-tailwind/react/Checkbox";
 
 // components
 
 export default function CardProfile() {
+  const [showModal, setShowModal] = useState(false);
+
+  const buttonRef = useRef();
+
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -87,6 +97,311 @@ export default function CardProfile() {
                 See calendar
               </Button>
             </Link>
+            <Button
+              className="mt-2"
+              color="lightBlue"
+              buttonType="filled"
+              size="lg"
+              onClick={(e) => setShowModal(true)}
+              rounded={false}
+              block={true}
+              iconOnly={false}
+              ripple="dark"
+            >
+              Resume{" "}
+            </Button>
+            <Modal
+              size="lg"
+              active={showModal}
+              toggler={() => setShowModal(false)}
+            >
+              <ModalHeader toggler={() => setShowModal(false)}>
+                Dossier de candidature{" "}
+              </ModalHeader>
+              <ModalBody>
+                <h1 className="text-base leading-relaxed font-semibold">
+                  Civilité <FontAwesomeIcon icon="user" className=" " />
+                </h1>
+                <div className="mt-5  border-t border-blueGray-200 text-left"></div>
+                <p>nom : </p>
+                <p>prenom : </p>
+                <p>Email : </p>
+                <p>Nationalité : </p>
+                <p>
+                  Nationalité :
+                  NationalitéNationalitéNationalitéNationalitéNationalitéNationalité{" "}
+                </p>
+
+                <h1 className="text-base mt-5 leading-relaxed font-semibold">
+                  Diplome/ Formation Langues
+                  <FontAwesomeIcon icon="certificate" className=" " />
+                </h1>
+                <div className="mt-5  border-t border-blueGray-200 text-left"></div>
+                <p className="mt-2">Dernière(s) diplômes(s) : </p>
+                <div class="w-2/3 mx-auto">
+                  <div class="bg-white  rounded my-6">
+                    <table className="text-left  w-full ">
+                      {" "}
+                      <thead className="bg-teal-500 border">
+                        <tr>
+                          <th class="  text-white py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Année{" "}
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Diplome
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="border">
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            2020-2021{" "}
+                          </td>
+                          <td class="py-4 px-6 border">
+                            ojfeofjeojfopejfopjeofjeofejpo
+                          </td>
+                        </tr>
+                        <tr class="hover:bg-grey-lighter ">
+                          <td class="py-4 px-6 border bg-teal-200 ">
+                            2021-2022{" "}
+                          </td>
+                          <td class="py-4 px-6 border "></td>
+                        </tr>
+
+                        <tr class="hover:bg-grey-lighter">
+                          <td class="py-4 px-6 border bg-teal-200">
+                            Mexico City
+                          </td>
+                          <td className="py-4 px-10 border"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p className="mt-2">Différents(s) langues(s) : </p>
+                    <div className="w-2/3 mx-auto">
+                      <div className="bg-white shadow-md rounded my-6">
+                        <table className="text-left  w-full ">
+                          {" "}
+                          <thead className="bg-teal-500 border">
+                            <tr>
+                              <th class="  text-white py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                                Langue{" "}
+                              </th>
+                              <th class="text-white py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">
+                                Niveau
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="border">
+                            <tr class="hover:bg-grey-lighter border ">
+                              <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                                Arabe
+                              </td>
+                              <td class="py-4 px-6 border">
+                                ojfeofjeojfopejfopjeofjeofejpo
+                              </td>
+                            </tr>
+                            <tr class="hover:bg-grey-lighter ">
+                              <td class="py-4 px-6 border bg-teal-200 ">
+                                Française{" "}
+                              </td>
+                              <td class="py-4 px-6 border "></td>
+                            </tr>
+                            <tr class="hover:bg-grey-lighter">
+                              <td class="py-4 px-6 border bg-teal-200">
+                                Anglais{" "}
+                              </td>
+                              <td className="py-4 px-10 border"></td>
+                            </tr>
+                            <tr class="hover:bg-grey-lighter">
+                              <td class="py-4 px-6 border bg-teal-200">
+                                Espagnole{" "}
+                              </td>
+                              <td className="py-4 px-10 border"></td>
+                            </tr>{" "}
+                            <tr class="hover:bg-grey-lighter">
+                              <td class="py-4 px-6 border bg-teal-200">
+                                Allemand{" "}
+                              </td>
+                              <td className="py-4 px-10 border"></td>
+                            </tr>
+                            <tr class="hover:bg-grey-lighter">
+                              <td class="py-4 px-6 border bg-teal-200">
+                                Italien{" "}
+                              </td>
+                              <td className="py-4 px-10 border"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <h1 className="text-base mt-5 leading-relaxed font-semibold">
+                      Compétences / Environnement technique{" "}
+                      <FontAwesomeIcon icon="code" className=" " />
+                    </h1>
+                    <div className="mt-5  border-t border-blueGray-200 text-left"></div>
+                  </div>
+                </div>
+                <div className="w-2/3 mx-auto">
+                  <div className="bg-white shadow-md rounded my-6">
+                    <table className="text-left  w-full ">
+                      {" "}
+                      <thead className="bg-teal-500 border">
+                        <tr>
+                          <th class="  text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Niveau{" "}
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Angular
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            React
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Node js
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Spring Boot
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Javascript
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="border">
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            Débutant
+                          </td>
+                          <td class="py-4 px-6 border"> </td>
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>{" "}
+                          <td class="py-4 px-6 border"></td>
+                          <td class="py-4 px-6 border"></td>
+                        </tr>
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            Confirmé
+                          </td>
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>{" "}
+                          <td class="py-4 px-6 border"></td>{" "}
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>
+                          <td class="py-4 px-6 border"></td>
+                        </tr>
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            Expert
+                          </td>
+                          <td class="py-4 px-6 border"></td>{" "}
+                          <td class="py-4 px-6 border"></td>{" "}
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>
+                          <td class="py-4 px-6 border"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div className="w-2/3 mx-auto">
+                  <div className="bg-white shadow-md rounded my-6">
+                    <table className="text-left  w-full ">
+                      {" "}
+                      <thead className="bg-teal-500 border">
+                        <tr>
+                          <th class="  text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Niveau{" "}
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            PHP
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Symfony
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            Java{" "}
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            CSS{" "}
+                          </th>
+                          <th class="text-white py-4 px-6 bg-grey-lightest font-semibold uppercase text-sm text-grey-dark border-b border-grey-light">
+                            HTMl
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="border">
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            Débutant
+                          </td>
+                          <td class="py-4 px-6 border"> </td>
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>{" "}
+                          <td class="py-4 px-6 border"></td>
+                          <td class="py-4 px-6 border"></td>
+                        </tr>
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            Confirmé
+                          </td>
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>{" "}
+                          <td class="py-4 px-6 border"></td>{" "}
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>
+                          <td class="py-4 px-6 border"></td>
+                        </tr>
+                        <tr class="hover:bg-grey-lighter border ">
+                          <td class="py-4 px-6 border-lightBlue-700 bg-teal-200">
+                            Expert
+                          </td>
+                          <td class="py-4 px-6 border"></td>{" "}
+                          <td class="py-4 px-6 border"></td>{" "}
+                          <td class="py-4 px-6 border">
+                            {" "}
+                            <Checkbox color="cyan" id="checkbox" checked />
+                          </td>
+                          <td class="py-4 px-6 border"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button
+                  color="red"
+                  buttonType="link"
+                  onClick={(e) => setShowModal(false)}
+                  ripple="dark"
+                >
+                  Close
+                </Button>
+
+                <Button
+                  color="green"
+                  onClick={(e) => setShowModal(false)}
+                  ripple="light"
+                >
+                  Unsave
+                </Button>
+              </ModalFooter>
+            </Modal>
           </div>
           <div className="text-center mt-12">
             <h3 className="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">

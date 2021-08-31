@@ -1167,7 +1167,7 @@ select {
 
 .bg-teal-500 {
   --tw-bg-opacity: 1;
-  background-color: rgba(20, 184, 166, var(--tw-bg-opacity));
+  background-color: rgba(8, 192, 196, var(--tw-bg-opacity));
 }
 
 .bg-emerald-200 {

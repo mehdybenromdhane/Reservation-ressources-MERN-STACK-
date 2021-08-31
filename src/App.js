@@ -6,7 +6,7 @@ import ChatBot from "react-simple-chatbot";
 
 import { AuthContextProvider } from "./context/AuthContext";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fab, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import {
   faCheckSquare,
   faCoffee,
@@ -16,6 +16,10 @@ import {
   faRemoveFormat,
   faMinus,
   faTrash,
+  faUser,
+  faCertificate,
+  faUserGraduate,
+  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 import { ThemeProvider } from "styled-components";
 axios.defaults.withCredentials = true;
@@ -30,7 +34,11 @@ function App() {
     faPlus,
     faRemoveFormat,
     faMinus,
-    faTrash
+    faTrash,
+    faUser,
+    faCertificate,
+    faUserGraduate,
+    faCode
   );
   const config = {
     width: "350px",

@@ -115,29 +115,24 @@ export default function ServiceDetails() {
                     </h3>
                     <div className="text-sm leading-normal mt-8 mb-2 text-blueGray-400  ">
                       <h3 className="text-2xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-                        About this work{" "}
+                        Title{" "}
                       </h3>
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
                         1,000+ Projects completed, 7000+ Happy buyers around the
                         world, 5000+ Positive Reviews, 100+ Industries. I am
                         professional and reputed logo design service provider,
-                        offering 100% original and conceptual logo design
-                        solutions for businesses of varying sizes. The logos
-                        will be the true representative of your business and
-                        match its nature and standard. I have been designing for
-                        various clients worldwide for the past 8 years. I have
-                        worked with several internationally acclaimed,
-                        prestigious and well known companies and organization. I
-                        have the ability to look from the client’s eye and
-                        understand their needs and provide my clients with
-                        designs that help achieve their company/brand full
-                        potential. Feature in Business Insider as a fiverr
-                        seller shorturl.at/uEPU3 Live Portfolio:
-                        http://flic.kr/s/aHsmGFyjY6 Unlimited Revisions. Color &
-                        Background Variations. 100% Original initial concepts.
-                        Delivery on Time. 100% Editable and Resizable Vector.
-                        Message for Consultation. Arlie
                       </p>
+                      <h3 className="text-2xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+                        Durée : 3 mois{" "}
+                      </h3>
+
+                      <div className="flex justify-center">
+                        <FontAwesomeIcon
+                          icon="star"
+                          className="star-yellow mx-3  "
+                        />
+                        <p className="font-bold  text-blueGray-700 ">5.0</p>
+                      </div>
                     </div>
                   </div>
                   <div className="mt-10 py-10 border-t border-blueGray-200 text-left">
